@@ -1,0 +1,10 @@
+<!-- app/views/prompts/index.html.erb -->
+<h1>List of Prompts</h1>
+<ul>
+  <% @prompts.each do |prompt| %>
+    <li><%= prompt.description %></li>
+  <% end %>
+</ul>
+
+<%= will_paginate @prompts %>
+
