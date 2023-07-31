@@ -1,5 +1,12 @@
 <!-- app/views/prompts/index.html.erb -->
 <h1>List of Prompts</h1>
+
+
+<%= form_tag(search_prompts_path, method: :get) do %>
+  <%= text_field_tag :q, params[:q], placeholder: 'Search by description...' %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
 <ul>
   <% @prompts.each do |prompt| %>
     <li><%= prompt.description %></li>
