@@ -43,10 +43,20 @@ docker-compose up
 
 ```
 
-### Database and elasticsearch index creation
+### Database
 ```
 docker-compose run web rails db:create
 docker-compose run web rails db:migrate
+```
+#### Import data from online data set
+
+```
+rake description:download
+rake description:import
+```
+
+#### Create elasticsearch index
+```
 docker-compose run web rake elasticsearch:import_prompts
 
 ```
@@ -63,7 +73,8 @@ docker-compose run web rspec
 
 ### Implemmentation notes
 
-- Ommited SearchService specs for simplicity
+- Ommited moost of the specs for simplicity.
+- As my laptop failed unexpectedly did not deploy to heroku, as well as did not have a chance to test UI, so there might be bugs.
 
 
 
